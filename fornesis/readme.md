@@ -79,5 +79,4 @@ by asef18766(陳兆閔) and YingMuo(彭建霖)
 
 * 2020/8/5 PM 10:27:32 ```"c:\windows\system32\cmd.exe" /c net use z: \\WIN-LN8SES7K1Q5\C$ /user:TEAMT5\Administrator mimikatz``` (windows IIS)
 
-<iframe width="100%" height="400" src="https://time.graphics/embed?v=1&id=463591" frameborder="0" allowfullscreen></iframe>
-<div><a  style="font-size: 12px; text-decoration: none;" title="Business graphics" href="https://time.graphics">Business graphics</a></div>
+[time graph link](https://time.graphics/embed?v=1&id=463591)
